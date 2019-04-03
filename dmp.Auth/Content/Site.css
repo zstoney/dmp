@@ -1,0 +1,51 @@
+﻿body {
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+h3, h4, h5 {
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 16px !important;
+    width: 94%
+}
+.middle-box h1 {
+    font-size: 125px;
+}
+.logo-name {
+    color: #2188e0;
+    font-size: 180px;
+    font-weight: 700;
+    /* letter-spacing: -10px; */
+    margin-bottom: 0px;
+}
+.middle-box {
+    max-width: 400px;
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+.loginscreen.middle-box {
+    width: 300px;
+}
+.full-width {
+    width: 100% !important;
+}
+.div-width {
+    width: 94% !important;
+}
+
