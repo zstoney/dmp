@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "角色权限管理";
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>角色</h5>
+                    <div class="ibox-tools">
+                        <a class="close-link" onclick="openView()">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <ul class="sortable-list connectList agile-list ui-sortable" id="roles">
+                        <li>系统管理员>><button type="button" class="btn btn-success btn-xs" style="float:right;">编辑</button></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>权限</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-8">
+                                <input type="hidden" class="input-sm form-control" id="roleID" value="0">
+                                <input type="text" class="input-sm form-control" disabled="" id="roleNameVal">
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-w-m btn-primary" onclick="saveDataMenu()">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab-1" aria-expanded="true">设置角色权限</a>
+                            </li>
+                            <li class="">
+                                <a data-toggle="tab" href="#tab-2" aria-expanded="false">设置菜单权限</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <!-- 用户 -->
+                            <div id="tab-1" class="tab-pane active">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <table id="tb_users">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="state" data-checkbox="true" data-formatter="stateFormatter"></th> 
+                                                        <th data-field="UserName">用户名</th>
+                                                        <th data-field="Mobile">手机号</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 菜单 -->
+                            <div id="tab-2" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <ul id="treeDemo" class="ztree"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<input hidden value="0" id="id" />
+<div id="roleModal" class="modal inmodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-body">
+                <h3 class="m-t-none m-b"><strong class="strong" id="title">新建</strong></h3>
+                <hr />
+                <form class="form-horizontal m-t" novalidate="novalidate">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">角色名称：</label>
+                        <div class="col-sm-8">
+                            <input id="roleName" maxlength="12" type="text" class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">角色字符：</label>
+                        <div class="col-sm-8">
+                            <input id="roleString" maxlength="50" type="text" class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-3">
+                            <button class="btn btn-primary" type="button" onclick="addOrUpdateRole()">提交</button>
+                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/js/SystemManage/RoleList.js"></script>
+<script src="~/Content/bootstrap-ztree/js/jquery.ztree.core.js"></script>
+<script src="~/Content/bootstrap-ztree/js/jquery.ztree.excheck.js"></script>

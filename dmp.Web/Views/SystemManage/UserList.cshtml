@@ -1,0 +1,101 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "用户管理";
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content text-center p-md">
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form id="formSearch" class="form-horizontal">
+                                <div class="form-group" style="margin-top:15px">
+                                    <label class="control-label col-sm-1" for="UserName">用户名</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" id="UserName">
+                                    </div>
+                                    <label class="control-label col-sm-1">状态</label>
+                                    <div class="col-sm-3">
+                                        <select class="form-control m-b" id="Status">
+                                            <option value="-1">全部</option>
+                                            <option value="0">正常</option>
+                                            <option value="1">注销</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4" style="text-align:left;">
+                                        <button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
+                                        <button type="button" class="btn btn-info" onclick="openView(0)">新建</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <table id="tb_departments">
+                        <thead>
+                            <tr>
+                                <th data-field="state" data-checkbox="true"></th>
+                                <th data-field="UserName">用户名</th>
+                                <th data-field="Mobile">手机号</th>
+                                <th data-field="Status" data-formatter="statusFormat">状态</th>
+                                <th data-field="CreateTime" data-formatter="dateFormat">创建时间</th>
+                                <th data-formatter="btnFormat">操作</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input hidden value="0" id="id" />
+<div id="userModal" class="modal inmodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-body">
+                <h3 class="m-t-none m-b"><strong class="strong" id="title">新建</strong></h3>
+                <hr />
+                <form class="form-horizontal m-t" novalidate="novalidate">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户名：</label>
+                        <div class="col-sm-8">
+                            <input id="name" maxlength="12" type="text" class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">密码：</label>
+                        <div class="col-sm-8">
+                            <input id="pwd" type="password" class="form-control" name="" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">真实姓名：</label>
+                        <div class="col-sm-8">
+                            <input id="realName" type="text" class="form-control" name="url" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">手机：</label>
+                        <div class="col-sm-8">
+                            <input id="phone" type="text" maxlength="11" class="form-control" name="url">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-3">
+                            <button class="btn btn-primary" type="button" onclick="addOrUpdateUser()">提交</button>
+                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/js/SystemManage/User.js"></script>

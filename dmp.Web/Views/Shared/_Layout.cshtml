@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>DMP管理系统</title>
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <link rel="shortcut icon" href="">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/switchery/switchery.css" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <link href="~/Content/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="~/Content/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <script src="~/Content/js/hplus/js/jquery.min.js"></script>
+    <script src="~/Content/js/hplus/js/bootstrap.min.js"></script>
+
+    <script src="~/Content/bootstrap-table/bootstrap-table.js"></script>
+    <link href="~/Content/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <link href="~/Content/bootstrap-table/bootstrap-table-pagejump.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap-table/bootstrap-table-pagejump.js"></script>
+     
+    <style>
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle !important;
+        }
+    </style>
+</head>
+<body class="fixed-sidebar full-height-layout gray-bg  skin-1"  style="overflow:hidden">
+
+    @RenderBody()
+
+    <script src="~/Content/js/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/js/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/js/hplus/js/plugins/layer/layer.min.js"></script>
+    <script src="~/Content/js/hplus/js/hplus.js"></script>
+    <script src="~/Content/js/hplus/js/contabs.js"></script>
+    <script src="~/Content/js/common.js"></script>
+
+    <script src="~/Content/js/hplus/js/plugins/pace/pace.min.js"></script>
+    <!-- Sweet Alert -->
+    <script src="~/Content/js/hplus/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/Content/js/hplus/js/plugins/cropper/cropper.min.js"></script>
+    <script language="javascript">
+        //防止页面后退
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+    </script>
+</body>
+</html>

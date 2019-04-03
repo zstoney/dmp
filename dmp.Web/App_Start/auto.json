@@ -1,0 +1,41 @@
+{
+  "components": [
+    {
+      "type": "DAL.UserInfoDal,DAL",
+      "services": [
+        {
+          "type": "IDAL.IUserInfoDal"
+        }
+      ],
+      "injectProperties": true
+    },
+    {
+      "type": "DAL.OrderInfoDal,DAL",
+      "services": [
+        {
+          "type": "IDAL.IOrderInfoDal"
+        }
+      ],
+      "injectProperties": true
+    },
+    {
+      "type": "BLL.UserInfoService,BLL",
+      "services": [
+        {
+          "type": "IBLL.IUserInfoService"
+        }
+      ],
+      "injectProperties": true
+    },
+    {
+      "type": "BLL.OrderInfoService,BLL",
+      "services": [
+        {
+          "type": "IBLL.IOrderInfoService"
+        }
+      ],
+      "injectProperties": true
+    }
+  ]
+
+}
